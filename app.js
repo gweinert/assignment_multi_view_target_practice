@@ -27,7 +27,8 @@ app.config(['$stateProvider', '$urlRouterProvider',
 			url: '/child',
 			views: {
 				'': {
-					template: '<p>Targeting unnamed child view from child state</p>'
+					// template: '<p>Targeting unnamed child view from child state</p>'
+					templateUrl: './templates/grandchild.html',
 				},
 				'named-child': {
 					template: '<p>Targeting named child view from child state</p>'
@@ -39,6 +40,27 @@ app.config(['$stateProvider', '$urlRouterProvider',
 					template: '<h2>Targeting header from child state</h2>',
 				},
 			},
+		})
+
+		.state('parent.child.grandchild', {
+			url: '/grandchild',
+			views: {
+				'': {
+					template: '<p>Targeting unnamed grandchild view from grandchild state</p>',
+				},
+				'named-grandchild': {
+					template: '<p>Targeting named grandchild view from grandchild state</p>',
+				},
+				'named-child@parent': {
+					template: '<p>Targeting named child view from grandchild state</p>',
+				},
+				'named-parent@': {
+					template: '<p>Targeting named parent view from grandchild state</p>',
+				},
+				'main-header@': {
+					template: '<h2>Targeting header from grandchild state</h2>',
+				}
+			}
 		})
 	
 	}]
