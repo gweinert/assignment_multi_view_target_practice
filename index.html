@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TargetPractice">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Multi View</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script src="./vendor/angular-ui-router.min.js"></script>
+
+	<!-- app -->
+	<script src="./app.js"></script>
+
+</head>
+<body>
+	<header>
+		<h1>Multi-View Target Practice</h1>
+		<span ui-view="main-header"></span>
+	</header>
+	<nav>
+		<a ui-sref="parent">Parent</a>
+	</nav>
+	<main>
+		
+		<h2>Parent</h2>
+		
+		<div ui-view></div>
+		<div ui-view="named-parent"></div>
+	
+	</main>
+</body>
+</html>
